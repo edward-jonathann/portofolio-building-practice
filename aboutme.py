@@ -14,8 +14,11 @@ def tampilkan_tentang():
     # Skills expander
     with st.expander("🔍 See my skills in detail"):
         st.progress(80, text="Python")
-        st.progress(70, text="Machine Learning")
-        st.progress(60, text="Data Visualization")
+        st.progress(50, text="Machine Learning")
+        st.progress(70, text="Power Bi")
+        st.progress(70, text="SQL")
+        st.progress(50, text="Tableau")
+        st.progress(80, text="Microsoft Excel")
 
     # PDF Resume Viewer
     st.divider()
