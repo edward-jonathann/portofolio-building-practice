@@ -51,7 +51,7 @@ def tampilkan():
         with col1:
             if st.button("View Code ↗", key=f"code_{selected_project}"):
                 st.markdown(f"[Work In Progress]({projects[selected_project]['link']})")
-                st.balloons()
+                
         with col2:
             if st.button("See Demo ↗", key=f"demo_{selected_project}"):
                 st.write("No Demo available yet!")  # Replace with actual demo link
