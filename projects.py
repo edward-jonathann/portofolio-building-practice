@@ -50,11 +50,11 @@ def tampilkan():
         col1, col2 = st.columns(2)
         with col1:
             if st.button("View Code ↗", key=f"code_{selected_project}"):
-                st.markdown(f"[GitHub Link]({projects[selected_project]['link']})")
+                st.markdown(f"[Work In Progress]({projects[selected_project]['link']})")
                 st.balloons()
         with col2:
             if st.button("See Demo ↗", key=f"demo_{selected_project}"):
-                st.write("Demo loading...")  # Replace with actual demo link
+                st.write("No Demo available yet!")  # Replace with actual demo link
 
     # Overview of all projects (collapsible)
     with st.expander("📋 **Quick Overview of All Projects**", expanded=True):
