@@ -17,19 +17,19 @@ def tampilkan():
 
     # Project dropdown (list of projects)
     projects = {
-        "Sales Forecast": {
-            "description": "Time-series model to predict revenue using ARIMA and Python.",
-            "skills": "Python, Pandas, Statsmodels",
+        "Customer Segmentation": {
+            "description": "A Customer Segmentation analysis with RFM",
+            "skills": "Python, Pandas, PowerBI",
             "link": "https://github.com/your-repo1"
         },
-        "Image Classifier": {
-            "description": "CNN model to classify CIFAR-10 images with TensorFlow.",
-            "skills": "Python, TensorFlow, Computer Vision",
+        "Customer Clustering": {
+            "description": "K-means model with PCA and TSNE to find customer's cluster.",
+            "skills": "Python, K-means, PCA, TSNE",
             "link": "https://github.com/your-repo2"
         },
-        "Customer Segmentation": {
-            "description": "Clustering analysis for marketing strategies using K-Means.",
-            "skills": "Python, Scikit-learn, PCA",
+        "Churn Analysis": {
+            "description": "Build a model to predict churning",
+            "skills": "Python, Scikit-learn",
             "link": "https://github.com/your-repo3"
         }
     }

@@ -13,7 +13,7 @@ def tampilkan():
 
     st.markdown("""
     Welcome to my portfolio! Here’s what you’ll find:
-    - **About Me**: My background and skills.
-    - **Projects**: My work in ML/data science.
-    - **Contact**: Let’s connect!
+    - **About Me**: Hi there! I’m Edward Jonathan, a curious and driven professional on a transformative journey from project management and business development to the exciting world of data science.
+    - **Projects**: See my projects page!
+    - **Contact**: Let’s connect on [LinkedIn](https://www.linkedin.com/in/edward-jonathann/)!
     """)
