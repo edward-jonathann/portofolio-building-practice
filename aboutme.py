@@ -23,8 +23,7 @@ foundation in quantitative analysis from an accounting background.
         st.progress(50, text="Tableau")
         st.progress(80, text="Microsoft Excel")
 
-        st.button("Reset", type="primary")
-    if st.button("Is this what skills you're looking for?"):
+    if st.button("Is this what skills you're looking for?   "):
         st.write("Send me a LinkedIn Invitation!")
     else:
         st.write("No? Then look around!")
