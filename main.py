@@ -53,7 +53,7 @@ st.set_page_config(page_title="Portfolio",
 st.title("Welcome to My Website!")
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Main Page",
-                        ["About Me", "Projects", "Overview", "Contact"])
+                        ["Overview", "Projects", "About Me", "Contact"])
 
 
 if page == "Contact":
