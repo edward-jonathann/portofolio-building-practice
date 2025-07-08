@@ -3,12 +3,15 @@ import time
 import base64
 
 def tampilkan_tentang():
-    st.title("About Edward Jonathan!")
+    st.title("About me!")
 
     st.write("""
     **Who I Am**  
-    Passionate about turning data into insights.  
-    Skills: Python, TensorFlow, SQL, Streamlit.
+    A results-driven professional transitioning from Project Management and Business 
+Development to Data Science. Experienced in analyzing data to inform strategic decisions, 
+optimizing project workflows, and delivering data-backed insights. Currently pursuing 
+technical expertise in Python, SQL, and data science methodologies, with a strong 
+foundation in quantitative analysis from an accounting background. 
     """)
 
     # Skills expander
@@ -19,6 +22,13 @@ def tampilkan_tentang():
         st.progress(70, text="SQL")
         st.progress(50, text="Tableau")
         st.progress(80, text="Microsoft Excel")
+
+        st.button("Reset", type="primary")
+    if st.button("Is this what skills you're looking for?"):
+        st.write("Send me a LinkedIn Invitation!")
+    else:
+        st.write("No? Then look around!")
+
 
     # PDF Resume Viewer
     st.divider()

@@ -1,9 +1,16 @@
 import streamlit as st
 import time
+import pandas as pd
+import numpy as np
 
 def tampilkan():
     st.title("Hi, I'm Edward Jonathan")
-    st.subheader("Data Scientist | ML Engineer")
+    st.subheader("Data Scientist Enthusiast | ML Engineer Enthusiast")
+
+    chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["Company A", "Company B", "Company C"])
+
+    st.area_chart(chart_data)
+
 
     # Interactive button
     if st.button("👉 Click for a fun fact!"):
