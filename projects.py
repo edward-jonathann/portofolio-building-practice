@@ -20,7 +20,7 @@ def tampilkan():
         "Customer Segmentation": {
             "description": "A Customer Segmentation analysis with RFM",
             "skills": "Python, Pandas, PowerBI",
-            "link": "https://github.com/your-repo1"
+            "link": "https://github.com/edward-jonathann/shoppingstore"
         },
         "Customer Clustering": {
             "description": "K-means model with PCA and TSNE to find customer's cluster.",
@@ -31,8 +31,14 @@ def tampilkan():
             "description": "Build a model to predict churning",
             "skills": "Python, Scikit-learn",
             "link": "https://github.com/your-repo3"
+        },
+        "Flight Price Prediction": {
+            "description": "Build a model to predict ticket prices",
+            "skills": "Python, Scikit-learn, XGBoost, CatBoost",
+            "link": "https://github.com/edward-jonathann/flight-price-prediction",
+            "demo": "https://flight-price-prediction-edwardjonathan.streamlit.app/"
         }
-    }
+        }
     
     selected_project = st.selectbox(
         "Select a project to view details:",
@@ -54,7 +60,11 @@ def tampilkan():
                 
         with col2:
             if st.button("See Demo ↗", key=f"demo_{selected_project}"):
-                st.write("No Demo available yet!")  # Replace with actual demo link
+                demo_url = projects[selected_project].get("demo")
+                if demo_url:
+                    st.markdown(f"[Click here to view the demo ↗]({demo_url})", unsafe_allow_html=True)
+                else:
+                    st.warning("No Demo available yet!")
 
     # Overview of all projects (collapsible)
     with st.expander("📋 **Quick Overview of All Projects**", expanded=True):
