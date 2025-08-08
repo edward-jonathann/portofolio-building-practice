@@ -4,72 +4,74 @@ def tampilkan():
     # Custom CSS for dropdown/buttons (white text on dark backgrounds)
     st.markdown("""
     <style>
-        /* Dropdown text color */
         .stSelectbox label, .stSelectbox div[data-baseweb="select"] {
             color: white !important;
         }
-        /* Button text color */
         .stButton>button {
             color: white !important;
         }
     </style>
     """, unsafe_allow_html=True)
 
-    # Project dropdown (list of projects)
+    # Project data
     projects = {
         "Customer Segmentation": {
-            "description": "A Customer Segmentation analysis with RFM",
+            "description": "A Customer Segmentation analysis using RFM methodology to group customers based on their behavior.",
             "skills": "Python, Pandas, PowerBI",
-            "link": "https://github.com/edward-jonathann/shoppingstore"
+            "link": "https://github.com/edward-jonathann/shoppingstore",
+            "demo": None
         },
         "Customer Clustering": {
-            "description": "K-means model with PCA and TSNE to find customer's cluster.",
-            "skills": "Python, K-means, PCA, TSNE",
-            "link": "https://github.com/your-repo2"
+            "description": "K-means clustering with PCA and t-SNE to identify customer segments.",
+            "skills": "Python, K-means, PCA, t-SNE",
+            "link": "https://github.com/your-repo2",
+            "demo": None
         },
         "Churn Analysis": {
-            "description": "Build a model to predict churning",
+            "description": "Built a predictive model to identify customers likely to churn.",
             "skills": "Python, Scikit-learn",
-            "link": "https://github.com/your-repo3"
+            "link": "https://github.com/your-repo3",
+            "demo": None
         },
         "Flight Price Prediction": {
-            "description": "Build a model to predict ticket prices",
+            "description": """The goal of this project was to see if flight ticket prices could be predicted accurately using data and machine learning. 
+            The dataset contained over 300,000 flight booking records from India's top six metro cities. 
+            After cleaning and feature engineering, four ML models were tested — Random Forest performed best with 98.2% accuracy and 12% MAPE. 
+            This method can be applied beyond flights, e.g., in retail pricing or logistics planning.""",
             "skills": "Python, Scikit-learn, XGBoost, CatBoost",
             "link": "https://github.com/edward-jonathann/flight-price-prediction",
             "demo": "https://flight-price-prediction-edwardjonathan.streamlit.app/"
         }
-        }
-    
+    }
+
+    # Overview of all projects (TOP)
+    with st.expander("📋 Quick Overview of All Projects", expanded=True):
+        for project, details in projects.items():
+            st.markdown(f"- **{project}**: {details['description']} *(Skills: {details['skills']})*")
+
+    # Dropdown selection
     selected_project = st.selectbox(
         "Select a project to view details:",
         options=list(projects.keys()),
-        format_func=lambda x: f"📌 {x}"  # Add icon to dropdown items
+        format_func=lambda x: f"📌 {x}"
     )
     
-    # Display selected project details
-    with st.container(border=True):
-        st.subheader(f"**{selected_project}**")
-        st.markdown(f"**Description**: {projects[selected_project]['description']}")
-        st.markdown(f"**Skills**: `{projects[selected_project]['skills']}`")
-        
-        # Interactive buttons (with white text)
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("View Code ↗", key=f"code_{selected_project}"):
-                st.markdown(f"[Work In Progress]({projects[selected_project]['link']})")
-                
-        with col2:
-            if st.button("See Demo ↗", key=f"demo_{selected_project}"):
-                demo_url = projects[selected_project].get("demo")
-                if demo_url:
-                    st.markdown(f"[Click here to view the demo ↗]({demo_url})", unsafe_allow_html=True)
-                else:
-                    st.warning("No Demo available yet!")
+    # Project details
+    st.subheader(selected_project)
+    st.markdown(f"**Description:** {projects[selected_project]['description']}")
+    st.markdown(f"**Skills:** `{projects[selected_project]['skills']}`")
+    
+    # Buttons for Code and Demo
+    col1, col2 = st.columns(2)
+    with col1:
+        st.link_button("View Code ↗", projects[selected_project]['link'])
+    with col2:
+        demo_url = projects[selected_project].get("demo")
+        if demo_url:
+            st.link_button("See Demo ↗", demo_url)
+        else:
+            st.warning("No Demo available yet!")
 
-    # Overview of all projects (collapsible)
-    with st.expander("📋 **Quick Overview of All Projects**", expanded=True):
-        for project, details in projects.items():
-            st.markdown(f"""
-            - **{project}**: {details['description']}  
-              *(Skills: {details['skills']})*
-            """)
+# Run function
+if __name__ == "__main__":
+    tampilkan()
