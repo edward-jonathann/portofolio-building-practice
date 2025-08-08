@@ -40,7 +40,7 @@ def tampilkan():
             This method can be applied beyond flights, e.g., in retail pricing or logistics planning.""",
             "skills": "Python, Scikit-learn, XGBoost, CatBoost",
             "link": "https://github.com/edward-jonathann/flight-price-prediction",
-            "demo": "https://flight-price-prediction-edwardjonathan.streamlit.app/"
+            "demo": "https://flight-price-predictionv2-edwardjonathan.streamlit.app/"
         }
     }
 
